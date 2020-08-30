@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  shadowbox:
+    build: .
+    # stdin_open: true
+    # tty: true
+    privileged: true
+    environment:
+      - GIT_EMAIL=aaa.com
+    command: /bin/bash
+    ports:
+      - 8000:8000
+    volumes:
+      - ./storage:/secret/
+      - ~:/data
